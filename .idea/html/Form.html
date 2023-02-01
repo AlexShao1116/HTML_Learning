@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+</head>
+<body>
+
+<!--form
+action:receiving address,could be a webpage,or request address
+method:post,get    hand in method
+-->
+
+<!--get效率高，但在url中可以看到提交的内容，不安全，不能提交大文件
+post比较安全且可以提交大文件-->
+<!--标签	        说明
+input标签	大部分表单元素对应的标签有text、password、checkbox、radio、submit、reset、file、hidden、image和button，默认为text，可以提交用户名、密码等等
+select标签	下拉选择框
+textarea标签	文本域-->
+
+<!--属性	    说明
+type	指定元素的类型。text、password、checkbox、radio、submit、reset、file、hidden、image和button，默认为text
+name	指定表单元素的名称（提交时所对应的key）
+value	元素的初始值，radio必须提供
+size	指定表单元素的初始宽度。当type为text或者password时，以字符为单位；其他type以像素为单位
+maxlength	type为text或者password时，输入的最大字符数
+checked	type为radio或者checkbox时，指定按钮是否被选中-->
+
+<!--一些其他的属性
+属性	说明
+readonly	只读，不可更改
+disable	禁用
+hidden	隐藏，虽然不可见但是会提交
+id	标识符，可以配合label的for属性增加鼠标的可用性
+placehoder	text 文字域等输入框内的提示信息
+required	不能为空
+patten	正则表达式验证-->
+<h1>注册</h1>
+<!--表单from
+        action：表单提交的动作，可以是交给一个网址，也可以是交给一个请求处理地址
+        method：post get请求方式-->
+<form action="xxx/xxx" method="get">
+    <!--文本输入框：input type="text"-->
+    <p>用户名：<input type="text" name="username" value="请输入用户名" maxlength="10" size="20"></p>
+    <p>密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" placeholder="请输入密码" required="required"></p>
+    <!--    submit提交表单，reset清空-->
+    <p><input type="submit"> <input type="reset">
+    </p>
+    <!--    radio单选框标签 value即单选框的值，在提交时对应value
+    name：单选框组名，在同一个组内的radio标签同时只能选中一个，name值在提交时对应key
+    checked:默认被选中
+    -->
+    <p>性别：<input type="radio" value="boy" name="sex"/>
+        <input type="radio" value="girl" name="sex"/>
+    </p>
+    <p>爱好：
+        <input type="checkbox" value="b" name="hobby">打篮球
+        <input type="checkbox" value="s" name="hobby">唱rap
+        <input type="checkbox" value="d" name="hobby">跳舞
+    </p>
+    <p><input type="button" name="btn1" value="按钮上文字"><!--按钮-->
+
+        <input type="image" src="xxx/xxx"><!--图片按钮默认是提交：和submit类似-->
+    </p>
+    <p><!--下拉框：selected:默认选项-->
+        你来自：
+        <select name="location">
+            <option value="china">中国</option>
+            <option value="us" selected>美国</option>
+            <option value="japan">日本</option>
+        </select>
+    </p>
+
+    <p><!--文本域-->
+        反馈：
+        <textarea name="text" id="10" cols="30" rows="10" >文本内容</textarea>
+    </p>
+    <p><!--文件域-->
+        <input type="file" name="files">
+        <input type="button" name="upload" value="上传">
+    </p>
+    <!--邮件：会简单验证是否是邮箱地址
+		url：会简单验证是否是网络地址
+        number：数字验证-->
+    <p>邮箱：<input type="email" name="email">
+        url：<input type="url"></p>
+
+    <!--数字验证
+           max最大数量
+           min 最小数量
+           step 每次点击增加或减少的数量-->
+    <p>商品数量<input type="number" name="num" max="100" min="1" step="1"></p>
+    <!--滑块-->
+    <p>音量：<input type="range" min="0" max="100" name="voice" step="2"></p>
+    <!--搜索框-->
+    <p>搜索：<input type="search"></p>
+
+    <p><!--增强鼠标可用性-->
+        <label for="mark">你点我试试</label>
+        <input type="text" id="mark">
+    </p>
+</form>
+</body>
+</html>
